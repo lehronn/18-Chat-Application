@@ -8,10 +8,19 @@ const path = require('path'),
 //enviroment variable
 let env = process.env.NODE_ENV || 'development';
 
+//plugins configuration
+let plugins = [
+new HtmlWebpackPlugin({
+        template: 'src/index.html',
+        filename: 'index.html',
+        inject: 'body',
+    })
+];
+
 if (env === 'production') {
 plugins.push(
     new webpack.optimize.UglifyJsPlugin(),
-    new OptimizeJsPlugin({
+    new OptimizeJSPlugin({
       sourceMap: false
     })
   );
@@ -19,26 +28,19 @@ plugins.push(
 
 console.log('NODE_ENV:', env);
 
-//plugins configuration
-var plugins = [
-new HtmlWebpackPlugin({
-        template: 'public/index.html',
-        filename: 'index.html',
-        inject: 'body',
-    })
-];
+
 
 //webpack configuration
 module.exports = {
   entry: (env !== 'production' ? [
         'react-hot-loader/patch',
-        'webpack-dev-server/client?http://localhost:3000',
+        'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/only-dev-server',
     ] : []).concat(['./client/index.js']),
-  output: {
-    filename: './bundle.js',
-    path: path.resolve(__dirname, 'public'),
-  },
+output: {
+  filename: './bundle.js',
+  path: path.resolve(__dirname, 'public'),
+},
   module: {
     rules: [
       {
