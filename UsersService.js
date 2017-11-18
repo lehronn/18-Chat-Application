@@ -16,6 +16,7 @@ class UsersService {
   }
 
   removeUser(userId) {
+    //metoda tablicy filter tworzy nową tablicę z elementami które spełniają dane kryterium.
     this.users = this.users.filter(user => user.id !== userId);
   }
 }

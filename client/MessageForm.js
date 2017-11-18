@@ -9,18 +9,22 @@ class MessageForm extends Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault(); //zapobiega standar. zachowaniu formularza czyli przeładowaniu.
     const message = {
       from : this.props.name,
       text : this.state.text
     };
     this.props.onMessageSubmit(message);
-    this.setState({ text: '' });
+    this.setState({ text: '' }); //stan początkowy formularza wiadomości.
   }
 
   changeHandler(e) {
-    this.setState({ text : e.target.value });
+    this.setState({ text : e.target.value }); //ustawia wartość inputa.
   }
+
+  // handleSubmit - metoda obsługująca wysyłanie formularza (czyli wysłanie
+  // nowej wiadomości do serwera).
+  // changeHandler - odpowiednio zmieni stan text.
 
   render() {
     return(
