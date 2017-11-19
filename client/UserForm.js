@@ -5,9 +5,9 @@ import styles from './UserForm.css';
 class UserForm extends Component {
   constructor(props) {
     super(props);
-    const backgroundQuantity = 4;
-    let backgroundCounter = Math.ceil( Math.random() * backgroundQuantity );
-    this.state = {name: '', backgroundCounter: backgroundCounter};
+    const backgroundQuantity = 4; //ile będzie zdjęć do losowania?
+    let backgroundCounter = Math.ceil( Math.random() * backgroundQuantity ); //losowanie zdjęcia do wyświetlenia.
+    this.state = {name: '', backgroundCounter: backgroundCounter}; //przekazanie stanu z imieniem i wylosowanym zdjęciem do wyświetlenia.
   }
 
   handleSubmit(e) {
@@ -20,10 +20,10 @@ class UserForm extends Component {
   }
 
   render() {
-    let currentBackground = 'images/'+ this.state.backgroundCounter +'.jpg';
+    let currentBackground = 'images/'+ this.state.backgroundCounter +'.jpg'; //adres wylosowanego zdjęcia przekazujemy do zmiennej.
 
     return(
-      <form style={{background:`url(${currentBackground})`, backgroundSize: 'cover'}} className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
+      <form style={{background:`url(${currentBackground})`, backgroundSize: 'cover'}} className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}> //przekanie zmiennej do propsa. `${}` to template z ES6.
         <input
           className={styles.UserInput}
           placeholder='Write your nickname and press enter'
