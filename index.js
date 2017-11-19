@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/public'));
 
 //routing na adres / który odsyła do index.html
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/index.html'); // __dirname zmienna globalna node
 });
 
 //miejsce dla funkcji, które zostaną wykonane po podłączeniu klienta

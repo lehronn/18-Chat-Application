@@ -16,6 +16,7 @@ new HtmlWebpackPlugin({
         inject: 'body',
     })
 ];
+//te wtyczki odpalają się zawsze
 
 if (env === 'production') {
 plugins.push(
@@ -25,10 +26,9 @@ plugins.push(
     })
   );
 }
+//te powyższe odpalają się tylko przy production.
 
 console.log('NODE_ENV:', env);
-
-
 
 //webpack configuration
 module.exports = {

@@ -17,6 +17,7 @@ class UsersService {
 
   removeUser(userId) {
     //metoda tablicy filter tworzy nową tablicę z elementami które spełniają dane kryterium.
+    //metoda delete do obiektów, przy tablicach indexOf(aktualny index wyszukiwanego elementu) .slice .split
     this.users = this.users.filter(user => user.id !== userId);
   }
 }

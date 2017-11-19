@@ -5,7 +5,9 @@ import styles from './UserForm.css';
 class UserForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {name: ''};
+    const backgroundQuantity = 4;
+    let backgroundCounter = Math.ceil( Math.random() * backgroundQuantity );
+    this.state = {name: '', backgroundCounter: backgroundCounter};
   }
 
   handleSubmit(e) {
@@ -18,8 +20,10 @@ class UserForm extends Component {
   }
 
   render() {
+    let currentBackground = 'images/'+ this.state.backgroundCounter +'.jpg';
+
     return(
-      <form className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
+      <form style={{background:`url(${currentBackground})`, backgroundSize: 'cover'}} className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
         <input
           className={styles.UserInput}
           placeholder='Write your nickname and press enter'
