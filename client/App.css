@@ -7,19 +7,22 @@ body {
     flex-direction: column;
     flex: 1;
     height: 100vh;
+    background: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
 }
 
 .AppHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: 1px solid #ccc;
+    background: #21252b;
+    font-size: 18px;
 }
 
 .AppTitle {
     display: flex;
-    width: 25vw;
-    border-right: 1px solid #ccc;
+    width: 15vw;
     justify-content: center;
     box-sizing: border-box;
     padding: 20px;
@@ -27,7 +30,7 @@ body {
 
 .AppRoom {
     display: flex;
-    width: 75vw;
+    width: 85vw;
     justify-content: center;
     box-sizing: border-box;
     padding: 20px;
@@ -42,6 +45,6 @@ body {
 .MessageWrapper {
     display: flex;
     flex-direction: column;
-    width: 75vw;
+    width: 85vw;
     flex: 1;
 }

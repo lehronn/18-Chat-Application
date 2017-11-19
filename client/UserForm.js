@@ -22,11 +22,12 @@ class UserForm extends Component {
   render() {
     let currentBackground = 'images/'+ this.state.backgroundCounter +'.jpg'; //adres wylosowanego zdjęcia przekazujemy do zmiennej.
 
+//w <form style=> jest przekazanie zmiennej do propsa. `${}` to template z ES6.
     return(
-      <form style={{background:`url(${currentBackground})`, backgroundSize: 'cover'}} className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}> //przekanie zmiennej do propsa. `${}` to template z ES6.
+      <form style={{background:`url(${currentBackground})`, backgroundSize: 'cover'}} className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
         <input
           className={styles.UserInput}
-          placeholder='Write your nickname and press enter'
+          placeholder='Your name is?'
           onChange={e => this.handleChange(e)}
           value={this.state.name}
         />
