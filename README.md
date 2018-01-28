@@ -13,5 +13,4 @@ Chat application with node.js, express.js, react.js and socket.io
 For running React Chat You have to:
 * git clone this repo.
 * Run `index.js` with `node index.js` command. You can use pm2 or smth like this.
-* Run `public/index.html` in browser. Public folder contains ready distribution version.
-
+* Run `localhost:3000` in browser. Public folder contains ready distribution version.
